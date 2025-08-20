@@ -31,18 +31,41 @@ export default function LoginPage() {
       title="Login"
       loading={loading}
       onSubmit={onSubmit}
-      fields={(
+      fields={
         <>
           <div>
             <label className="label">Email</label>
-            <input className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input
+              className="input"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
           <div>
             <label className="label">Password</label>
-            <input className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input
+              className="input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <p className="text-sm mt-4">
+              Not registered?{" "}
+              <span
+                className="text-blue-500 cursor-pointer"
+                onClick={() => router.push("/register")}
+              >
+                Register
+              </span>
+            </p>
           </div>
         </>
-      )}
+      }
     />
   );
 }

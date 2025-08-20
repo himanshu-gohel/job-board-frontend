@@ -21,7 +21,9 @@ export default function RegisterPage() {
       router.push("/login");
     } catch (err) {
       toast.error(err.response?.data?.message || "Registration failed");
-    } finally { setLoading(false); }
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -29,22 +31,50 @@ export default function RegisterPage() {
       title="Register"
       loading={loading}
       onSubmit={onSubmit}
-      fields={(
+      fields={
         <>
           <div>
             <label className="label">Name</label>
-            <input className="input" value={name} onChange={(e) => setName(e.target.value)} required />
+            <input
+              className="input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </div>
           <div>
             <label className="label">Email</label>
-            <input className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input
+              className="input"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
           <div>
             <label className="label">Password</label>
-            <input className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input
+              className="input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <p className="text-sm mt-4">
+              Already have an account?{" "}
+              <span
+                className="text-blue-500 cursor-pointer"
+                onClick={() => router.push("/login")}
+              >
+                Login
+              </span>
+            </p>
           </div>
         </>
-      )}
+      }
     />
   );
 }
