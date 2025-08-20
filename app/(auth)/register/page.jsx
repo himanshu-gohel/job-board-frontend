@@ -66,7 +66,7 @@ export default function RegisterPage() {
             <p className="text-sm mt-4">
               Already have an account?{" "}
               <span
-                className="text-blue-500 cursor-pointer"
+                className="text-brand-600 cursor-pointer"
                 onClick={() => router.push("/login")}
               >
                 Login

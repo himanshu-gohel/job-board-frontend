@@ -23,7 +23,9 @@ export default function LoginPage() {
       router.push("/jobs");
     } catch (err) {
       toast.error(err.response?.data?.message || "Login failed");
-    } finally { setLoading(false); }
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -57,7 +59,7 @@ export default function LoginPage() {
             <p className="text-sm mt-4">
               Not registered?{" "}
               <span
-                className="text-blue-500 cursor-pointer"
+                className="text-brand-600 cursor-pointer"
                 onClick={() => router.push("/register")}
               >
                 Register
